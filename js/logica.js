@@ -7,6 +7,16 @@ Clickbutton.forEach(btn => {
   btn.addEventListener('click', agregarAlCarrito)
 })
 
+const btn_comprar = document.querySelector('.btn_comprar')
+btn_comprar.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Haz realizado tu pedido! te mandaremos los detalles al mail registrado',
+    icon: 'success',
+    confirmButtonText: 'Compra Exitosa'
+})
+})
+
+
 
 function agregarAlCarrito(e){
   const button = e.target
