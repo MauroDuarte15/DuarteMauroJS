@@ -34,7 +34,7 @@ html, body {
     font-size: 1.125rem;
     line-height: 3rem;
     width: 100%; height: 3rem;
-    color: #444;
+    color: rgb(0, 0, 0);
     background-color: rgba(255,255,255,.9);
     border: 0;
     border-top: 1px solid rgba(255,255,255,0.7);
@@ -86,21 +86,11 @@ html, body {
       padding-right: 0.75rem;
     }
   
-  .legal {
-    position: absolute;
-    bottom: 1.125rem; left: 1.125rem;
-  }
-  
-  .photo-cred {
-    position: absolute;
-    right: 1.125rem; bottom: 1.125rem;
-  }
-  
   .fullscreen-bg {
     position: fixed;
     z-index: -1;
     top:0; right:0; bottom:0; left:0;
-    background: #444;
+    background: rgb(255, 0, 179);
     background-size: cover;
   }
 
@@ -109,19 +99,3 @@ html, body {
       padding: 0;
       margin-top: 2px;
   }
-
-  .botonLogin2{
-      margin-top: 5px;
-  }
-
-.disabled{
-    pointer-events: none;
-}
-
-
-
-  
-  #toggle--login:checked ~ .form--signup { left:200%; visibility:hidden; }
-  #toggle--signup:checked ~ .form--login { left:-100%; visibility:hidden; }
-  
-  @media (height:300px){.legal,.photo-cred{display:none}}
