@@ -99,3 +99,7 @@ html, body {
       padding: 0;
       margin-top: 2px;
   }
+
+.disabled{
+    pointer-events: none;
+}
