@@ -88,6 +88,10 @@ header, .alert{
   font-size: 28px;
 }
 
+.btn_envio {
+  margin-left: 10px;
+}
+
 @keyframes neon1 {
   from {
     text-shadow: 0 0 10px  #FF1177,
@@ -221,6 +225,7 @@ body {
 .CopyDivResponsive {
   display: none;
 }
+
 
 @media (max-width: 991px) {
   .MenuResponsive {
