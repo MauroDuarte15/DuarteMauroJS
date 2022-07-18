@@ -30,8 +30,6 @@ const obtenerContenido = async (URL)=> {
               eventoAgregarAlCarrito(data)
       } catch (error) {
               contenidoDOM.innerHTML = retornoCardError()
-      } finally {
-
       }
 }
 
@@ -72,6 +70,7 @@ const eventoAgregarAlCarrito = (data) => {
     let idBOTON = `boton-articulo-${contenido.id}`;
     let botonAgregar = document.getElementById(idBOTON);
     botonAgregar.addEventListener('click', () => {
+      alert('Agregar')
     })
   })
 }
