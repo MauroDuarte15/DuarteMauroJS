@@ -27,15 +27,16 @@ const obtenerContenido = async (URL)=> {
                  cardsAmostrar += retornoCardContenido(contenido)
               })
               contenidoDOM.innerHTML = cardsAmostrar
+              eventoAgregarAlCarrito(data)
       } catch (error) {
               contenidoDOM.innerHTML = retornoCardError()
       } finally {
-              cargandoDOM.innerHTML = ""
+
       }
 }
 
 const retornoCardContenido = (contenido)=> {
-  const {imagen, nombre, precio} = contenido
+  const {imagen, nombre, precio, id} = contenido
 
   return `<div class="col d-flex justify-content-center mb-4">
                     <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
@@ -46,7 +47,7 @@ const retornoCardContenido = (contenido)=> {
                                 card title and make up the bulk of the card's content.</p>
                             <h5 class="text-primary">Precio: <span class="precio">${precio}</span></h5>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary button">Añadir al carrito</button>
+                                <button id="boton-articulo-${id}" class="btn btn-primary button">Añadir al carrito</button>
                             </div>
                         </div>
                     </div>
@@ -64,3 +65,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
      obtenerContenido(URL)      
   }, 2000);
 })
+
+const eventoAgregarAlCarrito = (data) => {
+  data.forEach(contenido => {
+    
+    let idBOTON = `boton-articulo-${contenido.id}`;
+    let botonAgregar = document.getElementById(idBOTON);
+    botonAgregar.addEventListener('click', () => {
+    })
+  })
+}
