@@ -1,4 +1,4 @@
-[
+const productos = [
     {
         "imagen": "./assets/img/maxiCamperaPiel.jpg",
         "nombre": "Maxi Campera",
@@ -82,5 +82,5 @@
         "precio": 100,
         "id": 12,
         "cantidad": 0
-      }
+      },
 ]

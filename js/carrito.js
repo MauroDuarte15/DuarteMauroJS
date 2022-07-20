@@ -1,22 +1,42 @@
-function agregarAlCarrito(e){
-    const button = e.target
-    const producto = button.closest('.card')
-    const productoNombre = producto.querySelector('.card-title').textContent;
-    const productoPrecio = producto.querySelector('.precio').textContent;
-    const productoImg = producto.querySelector('.card-img-top').src;
-    
-    const nuevoProducto = {
-      nombre: productoNombre,
-      precio: productoPrecio,
-      img: productoImg,
-      cantidad: 1
-    }
-  
-    productoAlCarrito(nuevoProducto)
+const tbody = document.querySelector('.tbody')
+let carrito = []
+
+const btn_comprar = document.querySelector('.btn_comprar')
+btn_comprar.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Haz realizado tu pedido! te mandaremos los detalles al mail registrado',
+    icon: 'success',
+    confirmButtonText: 'Compra Exitosa'
+})
+})
+
+const eventoAgregarAlCarrito = (data) => {
+    data.forEach(contenido => {
+      
+      let idBOTON = `boton-articulo-${contenido.id}`;
+      let botonAgregar = document.getElementById(idBOTON);
+      botonAgregar.addEventListener('click', agregarAlCarrito)
+    })
   }
   
-  
-  function productoAlCarrito(nuevoProducto){
+function agregarAlCarrito(event) {
+   const boton =  event.target
+   const producto = boton.closest('.card')
+   const productoNombre = producto.querySelector('.card-title').textContent;
+   const productoPrecio = producto.querySelector('.precio').textContent;
+   const productoImg = producto.querySelector('.card-img-top').src;
+   
+   const nuevoProducto = {
+    nombre: productoNombre,
+    precio: productoPrecio,
+    img: productoImg,
+    cantidad: 1
+  }
+
+   productoAlCarrito(nuevoProducto)
+}
+
+function productoAlCarrito(nuevoProducto){
   
     const alert = document.querySelector('.alert')
   
@@ -128,4 +148,3 @@ function agregarAlCarrito(e){
       pushCarrito()
     }
   }
-  

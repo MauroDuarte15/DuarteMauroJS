@@ -1,22 +1,6 @@
-const Clickbutton = document.querySelectorAll('.button')
-const tbody = document.querySelector('.tbody')
-
-let carrito = []
 const URL = `js/articulos.json`
 const contenidoDOM = document.querySelector("#contenido")
 
-Clickbutton.forEach(btn => {
-  btn.addEventListener('click', agregarAlCarrito)
-})
-
-const btn_comprar = document.querySelector('.btn_comprar')
-btn_comprar.addEventListener('click', () => {
-  Swal.fire({
-    title: 'Haz realizado tu pedido! te mandaremos los detalles al mail registrado',
-    icon: 'success',
-    confirmButtonText: 'Compra Exitosa'
-})
-})
 
 const obtenerContenido = async (URL)=> {
   let cardsAmostrar = ""
@@ -51,6 +35,7 @@ const retornoCardContenido = (contenido)=> {
                     </div>
                 </div>`
 }
+
 const retornoCardError = ()=> {
   return `<div class="center white-text"> 
               <br><br><br><br> 
@@ -64,13 +49,4 @@ document.addEventListener("DOMContentLoaded", ()=> {
   }, 2000);
 })
 
-const eventoAgregarAlCarrito = (data) => {
-  data.forEach(contenido => {
-    
-    let idBOTON = `boton-articulo-${contenido.id}`;
-    let botonAgregar = document.getElementById(idBOTON);
-    botonAgregar.addEventListener('click', () => {
-      alert('Agregar')
-    })
-  })
-}
+
